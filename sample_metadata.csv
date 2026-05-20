@@ -1,0 +1,7 @@
+Sample_ID,SRR_Accession,Condition,Replicate,Tissue,Disease_Status,Age_Group,Sex,Notes
+LUNG_CA_Rep1,SRR11262284,Cancer,1,Lung,Lung Cancer,>50,M,Lung cancer tissue sample
+LUNG_CA_Rep2,SRR11262285,Cancer,2,Lung,Lung Cancer,>50,F,Lung cancer tissue sample
+LUNG_CA_Rep3,SRR11262286,Cancer,3,Lung,Lung Cancer,>50,M,Lung cancer tissue sample
+LUNG_NOR_Rep1,SRR11262292,Normal,1,Lung,Normal,>50,M,Normal lung tissue sample
+LUNG_NOR_Rep2,SRR11262293,Normal,2,Lung,Normal,>50,F,Normal lung tissue sample
+LUNG_NOR_Rep3,SRR11262294,Normal,3,Lung,Normal,>50,M,Normal lung tissue sample

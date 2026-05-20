@@ -1,0 +1,115 @@
+# Bulk RNA-Seq Pipeline Configuration File
+# This file contains all parameters needed for the RNA-seq analysis workflow
+
+# Project Information
+project:
+  name: "Bulk RNA-Seq Transcriptomics Analysis"
+  description: "Comprehensive differential gene expression analysis"
+  date_created: "2024-01-01"
+  principal_investigator: "Your Name"
+  contact_email: "your.email@institution.org"
+
+# Reference Genome and Annotations
+reference:
+  genome_version: "GRCh38"
+  gtf_version: "Ensembl v109"
+  hisat2_index: "grch38_genome"
+  gtf_file: "Homo_sapiens.GRCh38.109.gtf"
+  organism: "Homo sapiens"
+
+# Quality Control Parameters
+fastqc:
+  threads: 10
+  memory_per_thread: "2G"
+  min_read_length: 50
+  min_quality_score: 20
+
+# Read Trimming Parameters
+trimming:
+  tool: "trimmomatic"
+  adapter_file: "TruSeq3-PE.fa"
+  leading_quality: 3
+  trailing_quality: 3
+  sliding_window: "4:15"
+  min_length_after_trim: 36
+  threads: 8
+
+# Alignment Parameters
+alignment:
+  tool: "hisat2"
+  max_intron_length: 500000
+  min_intron_length: 20
+  threads: 16
+  memory_per_thread: "4G"
+  secondary_alignments: false
+  strand_specific: false
+
+# Sorting and Indexing
+samtools:
+  threads: 8
+  memory_per_thread: "2G"
+  sort_method: "coordinate"
+
+# Quantification Parameters
+quantification:
+  tool: "featureCounts"
+  feature_type: "exon"
+  attribute_type: "gene_id"
+  strand_specific: 0  # 0=unstranded, 1=stranded (forward), 2=stranded (reverse)
+  multi_mapping: false
+  min_overlap: 1
+  threads: 8
+  count_overlaps: true
+
+# Differential Expression Analysis
+deseq2:
+  design_formula: "~condition"
+  min_counts: 10
+  alpha: 0.05
+  lfc_threshold: 0.5  # Log2 Fold Change threshold
+  independent_filtering: true
+  betaPrior: false
+  normalization_method: "DESeq2"  # DESeq2, TMM, RLE
+
+# Visualization Parameters
+visualization:
+  pca_colors: ["#1f77b4", "#ff7f0e"]
+  volcano_plot:
+    lfc_cutoff: 0.5
+    padj_cutoff: 0.05
+  heatmap:
+    n_genes: 50
+    clustering_method: "ward.D2"
+    color_palette: "RdYlBu"
+
+# Functional Annotation
+enrichment:
+  tool: "clusterProfiler"
+  ontology: ["BP", "MF", "CC"]  # Biological Process, Molecular Function, Cellular Component
+  padj_cutoff: 0.05
+  min_gene_set_size: 3
+  max_gene_set_size: 500
+  enrichment_databases: ["KEGG", "Reactome"]
+
+# Output Settings
+output:
+  save_intermediate_files: true
+  save_plots: true
+  save_tables: true
+  output_format: ["CSV", "TSV", "PDF"]
+  compress_output: true
+
+# Computing Resources
+resources:
+  total_threads: 16
+  total_memory: "32G"
+  partition: "default"
+  queue_name: "normal"
+  job_timeout: "48:00:00"
+
+# Data QC Thresholds
+quality_thresholds:
+  min_reads_per_sample: 10000000
+  acceptable_duplication_rate: 0.3
+  acceptable_gc_deviation: 0.2
+  acceptable_base_quality: 25

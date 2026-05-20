@@ -1,0 +1,109 @@
+# Raw sequencing data - very large files
+FASTQ/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Trimmed reads
+TRIMMED/
+*_trimmed.fastq
+*_trimmed.fastq.gz
+
+# BAM and alignment files - large
+BAM/
+ALIGN/
+*.bam
+*.bam.bai
+*.sam
+*.bed
+
+# Reference genome - very large
+REFERENCE/
+*.ht2
+*.fa
+*.fa.fai
+*.gtf
+*.gff*
+
+# Count and analysis results (intermediate)
+COUNTS/
+RESULTS/
+*.counts
+*.txt~
+
+# R temporary files
+.Rhistory
+.Rdata
+.Renviron
+.Rproj.user/
+*.Rproj
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.eclipse/
+
+# Log files
+*.log
+*.aux
+*.out
+
+# Conda environments
+env/
+venv/
+.conda/
+
+# Environment variables file (don't commit local settings)
+.env.local
+.env.*.local
+
+# System files
+Thumbs.db
+*.bak
+*.tmp
+*.temp
+
+# Large intermediate files (optional - uncomment to ignore)
+# *.unsorted.bam
+# *_unpaired.fastq
+# *.metrics.txt
+
+# Output files (optional - uncomment if you want to regenerate)
+# *.pdf
+# *.html
+# *.csv
+# *.xlsx
+
+# Keep these directories but ignore their contents (except critical files)
+DATA/
+FASTQC_Results/
+SCRIPTS/
+
+# Specific patterns
+sample_metadata.backup.csv
+config.backup.yaml
+.DS_Store
+*.cache
