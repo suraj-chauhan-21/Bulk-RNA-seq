@@ -399,7 +399,7 @@ If you use this pipeline in your research, please cite:
 For issues, questions, or suggestions:
 - Open an issue on GitHub
 - Check the FAQ in the wiki
-- Contact: your.email@institution.org
+- Contact: surajchauhandbz@gmail.com 
 
 ## Acknowledgments
 
