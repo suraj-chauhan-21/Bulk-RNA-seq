@@ -16,8 +16,9 @@ RNA sequencing (RNA-Seq) is a powerful and widely used technique for studying th
 - [Troubleshooting](#troubleshooting)
 - [Citation](#citation)
 - [License](#license)
+  
 
-  <img width="885" height="940" alt="520403625-8a5dd817-70b7-403f-a895-7088be3a17b8" src="https://github.com/user-attachments/assets/092a725d-96db-4d2a-987c-d54de346a0f6" />
+  <img width="485" height="540" alt="520403625-8a5dd817-70b7-403f-a895-7088be3a17b8" src="https://github.com/user-attachments/assets/092a725d-96db-4d2a-987c-d54de346a0f6" />
 
 
 ## Overview
